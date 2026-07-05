@@ -16,6 +16,8 @@ public class Main {
         serverSocket.setReuseAddress(true);
         clientSocket = serverSocket.accept();
 
+        clientSocket.getOutputStream().write("+PONG\r\n".getBytes());
+
       } catch (IOException e) {
           System.out.println("IOException: " + e.getMessage());
       } finally {
